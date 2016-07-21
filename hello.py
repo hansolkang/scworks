@@ -85,6 +85,16 @@ def match():
 def bulletinboard():
     return render_template('bulletin_board.html')
 
+@app.route('/bulletinboard/write')
+def writebulletin():
+    return render_template('write_bulletin_board.html')
+
+@app.route('/bulletinboard/apply')
+def bulletinapply():
+
+    return None
+
+
 @app.route('/view')
 def view():
     return render_template('view.html')
@@ -92,6 +102,18 @@ def view():
 @app.route('/list')
 def list():
     return render_template('list.html')
+
+@app.route('/writeboard')
+def writeboard():
+    return render_template('write_board.html')
+
+@app.route('/writeboard/apply', methods=['POST'])
+def apply():
+    if request.method == "POST":
+        temp = db.houseboard.find_one({"_id": "index"})
+        print temp
+        index = int(temp[unicode("val")])
+        return str(index)
 
 
 if __name__ == '__main__':
