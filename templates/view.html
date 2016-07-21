@@ -54,11 +54,12 @@ function showDivs(n) {
 <body>
 <!-- 메뉴 아이콘 클릭 시 좌측 사이드 바 -->
 <nav class="w3-sidenav w3-white w3-card-2" style="display:none" id="mySidenav">
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-closenav w3-large">Close &times;</a>
-  <a href="#" class="w3-hover-none w3-hover-text-red">프로필</a>
-  <a href="/match" class="w3-hover-none w3-hover-text-red">Main</a>
-  <a href="/match" class="w3-hover-none w3-hover-text-red">Match</a>
-  <a href="/bulletinboard" class="w3-hover-none w3-hover-text-red">자유게시판</a>
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-closenav w3-large">Close &times;</a>
+    <a href="#" class="w3-hover-none w3-hover-text-red" onclick="modify()"> <img src="효성3.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px;height:60px" onclick="modify()">프로필</a><br/><br/>
+    <a href="/main" class="w3-hover-none w3-hover-text-red" style="margin-top:10px;">Main</a>
+    <a href="/list" class="w3-hover-none w3-hover-text-red" style="margin-top:10px;">방 검색</a>
+    <a href="/match" class="w3-hover-none w3-hover-text-red" style="margin-top:10px;">Match</a>
+    <a href="/bulletinboard" class="w3-hover-none w3-hover-text-red" style="margin-top:10px;">자유게시판</a>
 </nav>
 <div id="main">
 
