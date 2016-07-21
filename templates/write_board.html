@@ -73,7 +73,7 @@ function person(){
 	
 	<!--집을 등록하기 위해 적어야 하는 기본 정보들-->
 	<section >
-		<form action="identify.jsp" method="POST">
+		<form action="/writeboard/apply" method="POST">
 				
 				<div class = "info">
 					<select class="w3-input w3-border" id="person_option" name="person_option"  style="width:50%; " onchange="person()">
@@ -134,7 +134,7 @@ function person(){
 				</div>
 				
 				<div class = "info">
-					<input  type = "button" id="w_btn1" class="w3-btn w3-light-grey" value = "등록" />
+					<input  type = "submit" id="w_btn1" class="w3-btn w3-light-grey" value = "등록" />
 					<input type = "button" id="w_btn2" class="w3-btn w3-light-grey" value = "취소" />
 				</div>		
 			</form>
