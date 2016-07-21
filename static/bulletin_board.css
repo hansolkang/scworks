@@ -1,0 +1,53 @@
+section{
+	margin-left:25%;
+	height:80%;
+	width:50%;
+}
+
+
+#openNav{
+	margin-top:15px;
+	margin-left:10px;
+}
+.info{
+	margin-top:15px;
+	margin-left:10px;
+
+
+}
+.title{
+	width:10%; 
+	float:left;
+}
+
+
+#comment{
+	vertical-align:middle;
+	width:70%;
+	margin-right:5%;
+	float:left;
+	
+}
+
+#c_btn{
+	vertical-align:middle;
+	width:15%;
+}
+
+#l_btn1{
+	margin:20px 0px;
+	margin-left:2%;
+	width:30%;
+}
+
+#l_btn2{
+	margin:20px 0px;
+	margin-left:2%;
+	width:30%;
+}
+
+#l_btn3{
+	margin:20px 0px;
+	margin-left:2%;
+	width:30%;
+}

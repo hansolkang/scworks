@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+<html>
+<meta charset = "UTF-8">
+<title>HOUSE</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link type="text/css" rel="stylesheet" href="/static/write_board.css"/>
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+
+<script>
+<!-- nav 열고 닫을 때 -->
+function w3_open() {
+  document.getElementById("main").style.marginLeft = "20%";
+  document.getElementById("mySidenav").style.width = "20%";
+  document.getElementById("mySidenav").style.display = "block";
+  document.getElementById("openNav").style.display = 'none';
+}
+function w3_close() {
+  document.getElementById("main").style.marginLeft = "0%";
+  document.getElementById("mySidenav").style.display = "none";
+  document.getElementById("openNav").style.display = "inline-block";
+}
+</script>
+<style>
+.w3-lobster {
+  font-family: "Lobster", serif;
+}
+
+.w3-myfont {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+</style>
+
+<body>
+<!-- 메뉴 아이콘 클릭 시 좌측 사이드 바 -->
+<nav class="w3-sidenav w3-white w3-card-2" style="display:none" id="mySidenav">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-closenav w3-large">Close &times;</a>
+  <a href="#" class="w3-hover-none w3-hover-text-red">프로필</a>
+  <a href="/match" class="w3-hover-none w3-hover-text-red">Match</a>
+  <a href="/bulletinboard" class="w3-hover-none w3-hover-text-red">자유게시판</a>
+  <a href="/logout" class="w3-hover-none w3-hover-text-red">로그아웃</a>
+</nav>
+<div id="main">
+
+	<!-- 앱 이름 나와있는 헤더 부분 -->
+	<header>
+		<div class="w3-container w3-aqua w3-text-white">
+			<center><div class="w3-container w3-lobster">
+				<p class="w3-xxxlarge">share house</p>
+			</div></center>
+		</div>
+	</header>
+
+	<!-- 메뉴 바 -->
+	<nav>
+		<!-- nav 보이게 하는 아이콘 -->
+		<span class="w3-opennav w3-xlarge" onclick="w3_open()" id="openNav" style="float:left">&#9776;</span>
+	</nav>
+	
+	
+	<!--매칭을 진행하기 위해 기본적으로 필요한 정보들-->
+	<section >
+		<form class="w3-container" action="main.html" method="POST">
+				<div class = "info">
+				<span class="title">나이</span>
+					<select class="w3-select w3-border" style="width:80%;" name="age" id="age">
+						<option value="1" disabled selected>10~20대</option>
+						<option value="2">20~30대</option>
+						<option value="3">30~40대</option>
+						<option value="3">40~50대</option>
+						<option value="3">50~60대</option>
+					</select>
+				</div>
+				<div class = "info">
+				<span class="title">비용</span>
+					<select class="w3-select w3-border" style="width:80%;" name="cost" id="cost">
+						<option value="1" disabled selected>30~40</option>
+						<option value="2">40~50</option>
+						<option value="3">50~60</option>
+						<option value="3">60~70</option>
+						<option value="3">70~80</option>
+					</select>
+				</div>
+				<div class = "info">
+				<span class="title">혼용</span>
+					<select class="w3-select w3-border" style="width:80%;" name="living" id="living">
+						<option value="1" disabled selected>상관없음</option>
+						<option value="2">여자 only</option>
+						<option value="3">남자 only</option>
+					</select>
+				</div>
+				<div class = "info">
+				<span class="title">흡연 유무</span>
+					<select class="w3-select w3-border" style="width:80%;" name="smoking" id="smoking">
+						<option value="1" disabled selected>상관없음</option>
+						<option value="2">YES</option>
+						<option value="3">NO</option>
+					</select>
+				</div>
+				<div class = "info">
+				<span class="title">음주 유무</span>
+					<select class="w3-select w3-border" style="width:80%;" name="drinking" id="drinking">
+						<option value="1" disabled selected>상관없음</option>
+						<option value="2">YES</option>
+						<option value="3">NO</option>
+					</select>
+				</div>
+				<div class = "info">
+				<span class="title">청소방식</span>
+					<select class="w3-select w3-border" style="width:80%;" name="cleaning" id="cleaning">
+						<option value="1" disabled selected>상관없음</option>
+						<option value="2">요일별 당번제 (월요일은 내가 화요일은 니가)</option>
+						<option value="3">역할 분담 (설거지, 화장실 청소, 베란다 청소 등)</option>
+					</select>
+				</div>
+				<div class = "info">
+				<span class="title">활동 시간</span>
+					<select class="w3-select w3-border" style="width:80%;" name="active_time" id="active_time">
+						<option value="1" disabled selected>상관없음</option>
+						<option value="2">오전 6시~오후 12시</option>
+						<option value="3">오후 12~오후 6시</option>
+						<option value="4">오후 6시~오전 12시</option>
+						<option value="5">오전 12~오전 6시</option>
+					</select>
+				</div>
+				<div class = "info">
+				<span class="title">지역</span>
+					<select class="w3-select w3-border" style="width:80%;" name="area" id="area">
+						<option value="1" disabled selected>서울</option>
+						<option value="2">대전</option>
+						<option value="3">부산</option>
+						<option value="4">대구</option>
+					</select>
+				</div>
+				<div class = "info">
+				<span class="title">사는 기간</span>
+					<select class="w3-select w3-border" style="width:80%;" name="lent_time" id="lent_time">
+						<option value="1" disabled selected>1~2개월</option>
+						<option value="2">2~3개월</option>
+						<option value="3">3~6개월</option>
+						<option value="4">6개월~12개월</option>
+						<option value="5">1년 이상</option>
+					</select>
+				</div>
+				<div class = "info">
+				<span class="title">애완동물 유무</span>
+					<select class="w3-select w3-border" style="width:80%;" name="pet" id="pet">
+						<option value="1" disabled selected>상관없음</option>
+						<option value="2">YES</option>
+						<option value="3">NO</option>
+					</select>
+				</div>
+				<div class = "info">
+				<span>대타 유무</span><span> <계약 기간 못채울 경우 타인이 남은 내 기간 동안 들어와 살아도 되는가?</span><br>
+					<select class="w3-select w3-border" style="margin-left:15%; width:80%;" name="replace" id="replace">
+						<option value="1" disabled selected>상관없음</option>
+						<option value="2">YES</option>
+						<option value="3">NO</option>
+					</select>
+				</div>
+				<div class = "info">
+				<span class="title">침대 유무</span>
+					<select class="w3-select w3-border" style="width:80%;" name="bed" id="bed">
+						<option value="1" disabled selected>상관없음</option>
+						<option value="2">YES</option>
+						<option value="3">NO</option>
+					</select>
+				</div>
+				<div class = "info">
+				<span class="title">베란다 유무</span>
+					<select class="w3-select w3-border" style="width:80%;" name="balcony" id="balcony">
+						<option value="1" disabled selected>상관없음</option>
+						<option value="2">YES</option>
+						<option value="3">NO</option>
+					</select>
+				</div>
+					
+
+				<div class = "info">
+					<input  type = "button" id="w_btn1" class="w3-btn w3-light-grey" value = "등록" />
+					<input type = "button" id="w_btn2" class="w3-btn w3-light-grey" value = "취소" />
+				</div>	
+		</form>
+	</section>
+
+	<!-- 뭔가 필요할 지도 모를 거 같아  -->
+	<aside>
+
+	</aside>
+	<!-- footer -->
+	<footer>
+		<div class="w3-container w3-aqua">
+		  <center><p>admin) 010-1234-5678</p></center>
+		</div>
+	</footer>
+</div>
+</body>
+</html>

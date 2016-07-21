@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<meta charset = "UTF-8">
+<title>HOUSE</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link type="text/css" rel="stylesheet" href="/static/bulletin_board.css"/>
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+
+<script>
+<!-- nav 열고 닫을 때 -->
+function w3_open() {
+  document.getElementById("main").style.marginLeft = "20%";
+  document.getElementById("mySidenav").style.width = "20%";
+  document.getElementById("mySidenav").style.display = "block";
+  document.getElementById("openNav").style.display = 'none';
+}
+function w3_close() {
+  document.getElementById("main").style.marginLeft = "0%";
+  document.getElementById("mySidenav").style.display = "none";
+  document.getElementById("openNav").style.display = "inline-block";
+}
+</script>
+<style>
+.w3-lobster {
+  font-family: "Lobster", serif;
+}
+
+.w3-myfont {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+</style>
+
+<body>
+<!-- 메뉴 아이콘 클릭 시 좌측 사이드 바 -->
+<nav class="w3-sidenav w3-white w3-card-2" style="display:none" id="mySidenav">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-closenav w3-large">Close &times;</a>
+  <a href="#" class="w3-hover-none w3-hover-text-red">프로필</a>
+ <a href="/match" class="w3-hover-none w3-hover-text-red">Match</a>
+  <a href="/bulletinboard" class="w3-hover-none w3-hover-text-red">자유게시판</a>
+  <a href="/logout" class="w3-hover-none w3-hover-text-red">로그아웃</a>
+</nav>
+<div id="main">
+
+	<!-- 앱 이름 나와있는 헤더 부분 -->
+	<header>
+		<div class="w3-container w3-aqua w3-text-white">
+			<center><div class="w3-container w3-lobster">
+				<p class="w3-xxxlarge">share house</p>
+			</div></center>
+		</div>
+	</header>
+
+	<!-- 메뉴 바 -->
+	<nav>
+		<!-- nav 보이게 하는 아이콘 -->
+		<span class="w3-opennav w3-xlarge" onclick="w3_open()" id="openNav" style="float:left">&#9776;</span>
+	</nav>
+	
+	
+	<!--자유 게시판에 입력한 정보들을 여기에 띄워줌 / 댓글의 경우는 입력 할수 있도록-->
+	<section >
+		<form class="w3-container" action="bulletin_board.html" method="POST">
+				<div class = "info">
+					<span class="title" >제목</span> <input style="width:90%;"  type = "text"  id="contentTitle" name="contentTitle" class="w3-input w3-border" disabled>
+				</div>
+	
+				<div class = "info">
+					<p class="title" >내용</p> <textarea  class="w3-input w3-border" id="story" name="story" rows ="18" cols = "80" disabled></textarea>
+				</div><br>
+	
+				<div class="info">
+					<span class="title" style="width:10%;">댓글</span> <input type = "text" id="comment" name="comment" class="w3-input w3-border" placeholder="댓글을 입력하세요" >
+					<input  type = "submit"  id="c_btn" class="w3-btn w3-light-grey"  value = "등록" />
+					
+				</div><br>
+				<!--이 버튼들 자기가 쓴글 들어갈시 떠야 하는거 아닌가요?-->
+				<div class = "info">
+					<input  type = "button" id="l_btn1" class="w3-btn w3-light-grey" value = "수정" />
+					<input  type = "button" id="l_btn2" class="w3-btn w3-light-grey" value = "삭제" />
+					<input  type = "button" id="l_btn3" class="w3-btn w3-light-grey" value = "목록" />
+				</div>		
+			</form>
+	</section>
+
+	<!-- 여기에 입력된 댓글들이 정리되어 들어가야 할것 같다  -->
+	<aside>
+
+	</aside>
+	<!-- footer -->
+	<footer>
+		<div class="w3-container w3-aqua">
+		  <center><p>admin) 010-1234-5678</p></center>
+		</div>
+	</footer>
+</div>
+</body>
+</html>

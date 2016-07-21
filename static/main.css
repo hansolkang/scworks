@@ -1,0 +1,38 @@
+
+.w3-dropdown-hover{
+	padding-top:15px;
+	padding-bottom:15px;
+	
+}
+#image{
+	margin-top:10px;
+}
+#search{
+	margin-top:15px;
+	margin-left:10px;
+}
+#openNav{
+	margin-top:15px;
+	margin-left:10px;
+}
+#searchInput{
+	margin-top:15px;
+	margin-left:20%;
+	
+}
+section{
+	margin-left:5%;
+}
+#modify{
+	position : absolute;
+	top: 300px;
+	right : 40%;
+	display : none;
+}
+#info{
+	padding : 8px;
+	border : 2px solid black;
+	position : absolute;
+	top: 300px;
+	right : 50px;
+}

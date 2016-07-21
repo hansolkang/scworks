@@ -1,0 +1,29 @@
+#sign{
+	font-size: 40px;
+	text-shadow: 1px 1px 3px #000;
+
+}
+
+.w3-dropdown-hover{
+	padding-top:15px;
+	padding-bottom:15px;
+	
+}
+
+#search{
+	margin-top:15px;
+	margin-left:10px;
+}
+#openNav{
+	margin-top:15px;
+	margin-left:10px;
+}
+#searchInput{
+	margin-top:15px;
+	margin-left:24%;
+	
+}
+section{
+	margin-top:15px;
+	margin-left:25%;
+}

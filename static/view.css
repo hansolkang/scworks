@@ -1,0 +1,64 @@
+section{
+	margin-left:25%;
+	height:40%;
+	width:50%;
+}
+
+aside{
+
+	margin-left:25%;
+	height:40%;
+	width:50%;
+}
+#openNav{
+	margin-top:15px;
+	margin-left:10px;
+}
+.info{
+	margin-top:15px;
+	margin-left:10px;
+
+
+}
+.title{
+	width:20%; 
+	float:left;
+	text-align:center;
+}
+
+#comment{
+	vertical-align:middle;
+	width:70%;
+	margin-right:5%;
+	float:left;
+	
+}
+
+#c_btn{
+	vertical-align:middle;
+	width:15%;
+}
+
+
+#a_btn1{
+	margin-top:10px;
+	width:40%;
+	margin-right:5%;
+}
+
+#a_btn2{
+	margin-top:10px;
+	width:40%;
+}
+
+#w_btn1{
+	margin:15px 0px;
+	margin-left:5%;
+	width:40%;
+}
+
+#w_btn2{
+	margin:15px 0px;
+	margin-left:5%;
+	width:40%;
+}

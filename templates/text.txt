@@ -1,0 +1,30 @@
+<section style="width:70%" >
+<div class="w3-container w3-section w3-border w3-border-purple w3-hover-border-blue" style="padding:10px" >
+<div class="w3-card-12" >
+  <img src="house.jpg" alt="house" class="w3-hover-opacity" style="width:100%">
+  <div class="w3-container w3-center">
+    <p>House Infomation</p>
+  </div>
+</div>
+</div>
+</section>
+
+
+<aside>
+<div class="w3-container">
+<p>A car is a wheeled, self-powered motor vehicle used for transportation.</p>
+</div>
+</aside>
+
+
+mySidenav
+main
+header1
+ul1
+London
+Paris
+Tokyo
+info
+footer1
+
+운동, 음악, 컴퓨터, 아이콘으로 표시

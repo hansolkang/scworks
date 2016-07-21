@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<meta charset = "UTF-8">
+<title>HOUSE</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link type="text/css" rel="stylesheet" href="/static/list.css"/>
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+
+<script>
+<!-- nav 열고 닫을 때 -->
+function w3_open() {
+  document.getElementById("main").style.marginLeft = "20%";
+  document.getElementById("mySidenav").style.width = "20%";
+  document.getElementById("mySidenav").style.display = "block";
+  document.getElementById("openNav").style.display = 'none';
+}
+function w3_close() {
+  document.getElementById("main").style.marginLeft = "0%";
+  document.getElementById("mySidenav").style.display = "none";
+  document.getElementById("openNav").style.display = "inline-block";
+}
+</script>
+<style>
+.w3-lobster {
+  font-family: "Lobster", serif;
+}
+
+.w3-myfont {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+</style>
+
+<body>
+<!-- 메뉴 아이콘 클릭 시 좌측 사이드 바 -->
+<nav class="w3-sidenav w3-white w3-card-2" style="display:none" id="mySidenav">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-closenav w3-large">Close &times;</a>
+  <a href="#" class="w3-hover-none w3-hover-text-red">프로필</a>
+  <a href="/match" class="w3-hover-none w3-hover-text-red">Match</a>
+  <a href="/bulletinboard" class="w3-hover-none w3-hover-text-red">자유게시판</a>
+  <a href="/logout" class="w3-hover-none w3-hover-text-red">로그아웃</a>
+</nav>
+<div id="main">
+
+	<!-- 앱 이름 나와있는 헤더 부분 -->
+	<header>
+		<div class="w3-container w3-aqua w3-text-white">
+			<center><div class="w3-container w3-lobster">
+				<p class="w3-xxxlarge">share house</p>
+			</div></center>
+		</div>
+	</header>
+
+	<!-- 메뉴 바 -->
+	<nav>
+		<!-- nav 보이게 하는 아이콘 -->
+		<span class="w3-opennav w3-xlarge" onclick="w3_open()" id="openNav" style="float:left">&#9776;</span>
+		<!-- search text -->
+		<div class="w3-half" id="searchInput">
+			<input class="w3-input w3-border" type="text" placeholder="search" >
+		</div>
+		<!-- search 아이콘 -->
+		<div>
+			<a href="#"><i id="search" class="fa fa-search w3-xxlarge" style="float:left"></i></a>
+		</div>
+		<!-- 등록 아이콘 -->
+		<div class="w3-container" align ="right">
+			<a id="image" class="w3-btn-floating-large w3-disabled">+</a>
+		</div>
+	</nav>
+	
+	
+	<!-- 테이블 창 일단 임의로 높이 값 주었다-->
+	<section style="width:50%; height:600px;">
+		<div id="list_table">
+		<table class="w3-table w3-striped w3-bordered w3-border" >
+		<tr class="w3-light-grey">
+		<td>제목</td>
+		<td>내용</td>
+		<td>작성자</td>
+		<td>날짜</td>
+		</tr>
+		</table>
+		</div>
+	</section>
+
+	<!-- 뭔가 필요할 지도 모를 거 같아  -->
+	<aside>
+
+	</aside>
+	<!-- footer -->
+	<footer>
+		<div class="w3-container w3-aqua">
+		  <center><p>admin) 010-1234-5678</p></center>
+		</div>
+	</footer>
+</div>
+</body>
+</html>

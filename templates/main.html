@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html>
+<meta charset = "UTF-8">
+<title>HOUSE</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link type="text/css" rel="stylesheet" href="/static/main.css"/>
+<!--<link type="text/css" rel="stylesheet" href="/static/main.css"/>-->
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+<script>
+<!-- nav 열고 닫을 때 -->
+function w3_open() {
+  document.getElementById("main").style.marginLeft = "20%";
+  document.getElementById("main").style.width = "70%";
+  document.getElementById("mySidenav").style.width = "20%";
+  document.getElementById("mySidenav").style.display = "block";
+  document.getElementById("openNav").style.display = 'none';
+  
+}
+function w3_close() {
+  document.getElementById("main").style.marginLeft = "0%";
+  document.getElementById("main").style.width = "100%";
+  document.getElementById("mySidenav").style.display = "none";
+  document.getElementById("openNav").style.display = "inline-block";
+}
+
+<!-- 프로필 수정 열고 닫을 때 -->
+function modify(){
+	document.getElementById("mySidenav").style.opacity= "0.2";
+	
+	document.getElementById("main").style.visibility= "hidden";
+	
+	document.getElementById("modify").style.display = "block";
+}
+function cancel(){
+	document.getElementById("modify").style.display = "none";
+	document.getElementById("main").style.visibility= "visible";
+	document.getElementById("mySidenav").style.opacity= "1.0";
+}
+</script>
+<style>
+.w3-lobster {
+  font-family: "Lobster", serif;
+}
+</style>
+
+<body>
+<!-- 프로필 클릭으로 회원 정보 수정 -->
+<div id = "modify" style="width:400px; height:500px;">
+	<div class="w3-container w3-section w3-border w3-border-purple w3-hover-border-blue" style="padding:10px" >
+		<div class="w3-card-12">
+			<div class="w3-container w3-blue">
+				<h2>회원정보 수정</h2>
+			</div>
+				<form class="w3-container" action="main.html" method="POST">
+					<p>
+					<label>I D : </label>ID 정보</p>
+
+					<p>
+					<label>name : </label>이름정보</p>
+					<p>
+					<label>password</label><input class="w3-input" name="password" type="password"></p>
+
+					<p>
+					<label>Tel</label><input class="w3-input" name="Tel" type="text"></p>
+
+					<label>성별 : </label> 회원 성별
+
+					<center><INPUT TYPE=SUBMIT class="w3-btn w3-light-grey" id="signUp" value='정보 수정'>
+					<INPUT TYPE=button id="submit" class="w3-btn w3-light-grey" VALUE='취소' onclick="cancel()"></center>
+				</form>
+		</div>
+	</div>
+</div>
+
+<!-- 메뉴 아이콘 클릭 시 좌측 사이드 바 -->
+<nav class="w3-sidenav w3-white w3-card-2" style="display:none" id="mySidenav" >
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-closenav w3-large">Close &times;</a>
+  <a href="#" class="w3-hover-none w3-hover-text-red" onclick="modify()"> <img src="/static/박보영.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px;height:60px" onclick="modify()">프로필</a><br/><br/>
+  <a href="/match" class="w3-hover-none w3-hover-text-red">Match</a>
+  <a href="/bulletinboard" class="w3-hover-none w3-hover-text-red">자유게시판</a>
+  <a href="/logout" class="w3-hover-none w3-hover-text-red">로그아웃</a>
+</nav>
+
+
+<div id="main">
+	<!-- 앱 이름 나와있는 헤더 부분 -->
+	<header>
+		<div class="w3-container w3-aqua w3-text-white">
+			<center><div class="w3-container w3-lobster">
+				<p class="w3-xxxlarge">share house</p>
+			</div></center>
+		</div>
+	</header>
+	
+	<!-- 메뉴 바 -->
+	<nav>
+		<!-- nav 보이게 하는 아이콘 -->
+		<span class="w3-opennav w3-xlarge" onclick="w3_open()" id="openNav" style="float:left">&#9776;</span>
+		<!-- search text -->
+		<div class="w3-half" id="searchInput">
+			<input class="w3-input w3-border" type="text" placeholder="search" >
+		</div>
+		<!-- search 아이콘 -->
+		<div>
+			<a href="#"><i id="search" class="fa fa-search w3-xxlarge" style="float:left"></i></a>
+		</div>
+		<!-- 등록 아이콘 -->
+		<div class="w3-container" align ="right">
+			<a id="image" class="w3-btn-floating-large w3-disabled">+</a>
+		</div>
+	</nav>
+	
+	<!-- 메인 몸통 부분(사진, 부가 설명 등등) -->
+	<section style="width:70%">
+		<div class="w3-container w3-section w3-border w3-border-purple w3-hover-border-blue" style="padding:10px" >
+			<!-- 사진 -->
+			<div class="w3-card-12" >
+				<img src="/static/house.jpg" alt="house" class="w3-hover-opacity" style="width:100%">
+				<!-- 부가 설명 -->
+				<div class="w3-container w3-center">
+					<p>House Infomation</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- 로그인 창, 사용자 정보 창 -->
+
+	<div id="info" style="width:20%">
+		<form class="w3-container" action="main.html" method="POST">
+			<div class="w3-container w3-blue">
+				<h2>login</h2>
+			</div>
+			<p><label><span style='letter-spacing:16px'>I D</span> : </label>{{ session.ID }}</p>
+			<p>안녕하세요.</p>
+
+			<center><INPUT TYPE=SUBMIT class="w3-btn w3-light-grey" id="signUp" value='이용내역'>
+				<INPUT TYPE=button id="submit" class="w3-btn w3-light-grey" VALUE='로그아웃' onclick="location.href='sign.html'"></center>
+		</form>
+		<br/>	
+	</div>
+	<!-- 설명이나 정보를 주고 싶을 때 이용하는 창 -->
+	<aside>
+		<div class="w3-container">
+			<p>A car is a wheeled, self-powered motor vehicle used for transportation.</p>
+		</div>
+	</aside>
+	<!-- footer -->
+	<footer>
+		<div class="w3-container w3-aqua">
+			<center><p>admin) 010-1234-5678</p></center>
+		</div>
+	</footer>
+</div>
+</body>
+</html>
