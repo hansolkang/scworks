@@ -11,10 +11,6 @@ app.config["SECRET_KEY"] = "5drfytguh23se5dr6ftugyw243e5d46rfted5r6yftugy5vd6rbf
 def hello_world():
     return 'hello world!'
 
-@app.route('/main')
-def main():
-    return render_template('main.html')
-
 @app.route('/user/<username>')
 def show_user_profile(username):
 
@@ -34,8 +30,8 @@ def logging_test():
 
 
 
-@app.route('/signup_form')
-def signup_form():
+@app.route('/sign')
+def sign():
     return render_template('sign.html')
 
 @app.route('/signup', methods=['POST'])
@@ -53,8 +49,8 @@ def signup():
    # return "asdf"
 app.secret_key = 'asdqw12312easddser'
 
-@app.route('/login_form/')
-def login_form():
+@app.route('/main/')
+def main():
     return render_template('login.html')
 
 @app.route('/login', methods=['POST'])
@@ -76,6 +72,10 @@ def login():
             return "id doesn\'t exsist"
     else:
         return "worng access"
+@app.route('/logout')
+def logout():
+    session["login_status"] = False
+    return redirect(url_for('main'))
 
 @app.route('/match')
 def match():
