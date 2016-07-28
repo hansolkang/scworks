@@ -73,7 +73,7 @@ function person(){
 	
 	<!--집을 등록하기 위해 적어야 하는 기본 정보들-->
 	<section >
-		<form action="/writeboard/apply" method="POST">
+		<form action="/writeboard/apply" method="POST" enctype="multipart/form-data">
 				
 				<div class = "info">
 					<select class="w3-input w3-border" id="person_option" name="person_option"  style="width:50%; " onchange="person()">
@@ -99,21 +99,21 @@ function person(){
 				
 				<div class = "info">
 				<span class="title" >지역</span>
-				<select id="a_btn1" class="w3-input w3-border" style="width:41%; float:left;" name="area_option1">
-					<option value="1" disabled selected>서울</option>
+				<select id="a_btn1" class="w3-input w3-border" style="width:41%; float:left;" id ="area_option1" name="area_option1">
+					<option value="1" selected>서울</option>
 					<option value="2">인천</option>
 					<option value="3">경기도</option>
 					<option value="3">충청남도</option>
 				</select> &nbsp;&nbsp;&nbsp;
-				<select id="a_btn2" class="w3-input w3-border" style="width:41%; float:left;" name="area_option2">
+				<select id="a_btn2" class="w3-input w3-border" style="width:41%; float:left;" id ="area_option2" name="area_option2">
 					<option value="" disabled selected>디비에따라서</option>
 				</select>
 				</div><br><br>
 
 				<div class = "info">
 				<span class="title" style="clear:left;" >나이</span>
-					<select class="w3-input w3-border" name="age_option"  style="width:90%; " >
-						<option value="1" disabled selected>10~20대</option>
+					<select id="a_btn3" class="w3-input w3-border" id ="age_option" name="age_option"  style="width:90%; " >
+						<option value="1" selected>10~20대</option>
 						<option value="2">20~30대</option>
 						<option value="3">30~40대</option>
 						<option value="3">40~50대</option>
@@ -126,7 +126,7 @@ function person(){
 				</div>
 	
 				<div class = "info" id="imagediv">
-					<span >사진 첨부<span> <input id="image" name="image" type = "file" multiple/>
+					<span >사진 첨부<span> <input id="image" name="image" type = "file">
 				</div><br>
 				
 				<div class = "info">

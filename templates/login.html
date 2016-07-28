@@ -200,7 +200,7 @@ function openCity(cityName) {
 	</section>
 	
 	<!-- 로그인 창, 사용자 정보 창 -->
-    {% if session.login_status %}
+    {% if (session.login_status == true) %}
         <div id="info" style="width:20%">
             <form class="w3-container" action="main.html" method="POST">
                 <div class="w3-container w3-blue">

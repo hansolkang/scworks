@@ -1,12 +1,34 @@
 from flask import Flask, render_template, request, session, redirect, url_for
+from pymongo import Connection
+from gridfs import GridFS
+from werkzeug import secure_filename
+from gridfs.errors import NoFile
 import pymongo
+import types
+import os
+#from pymongo.objectid import ObjectId
+
 client = pymongo.MongoClient("localhost", 27017)
 db = client.sharehouse
-
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "5drfytguh23se5dr6ftugyw243e5d46rfted5r6yftugy5vd6rbft7gyn89"
 
 
+class MongoGridFS:
+  def __init__(self): pass
+  def connect(self, host, port):
+    if isinstance(port, types.StringType) == True:
+      port = int(port)
+    self.instanceConnection = Connection(host, port)
+  def setDB(self, dbname):
+    self.db = self.instanceConnection[dbname]
+  def setGridFS(self, prefix = 'fs'):
+    self.fs = GridFS(self.db, prefix)
+  def put(self, data, **kwargs):
+    self.fs.put(data, **kwargs)
+  def get(self, filename):
+    out = self.fs.get_last_version(filename)
+    return out.read()
 @app.route('/')
 def hello_world():
     return 'hello world!'
@@ -110,10 +132,29 @@ def writeboard():
 @app.route('/writeboard/apply', methods=['POST'])
 def apply():
     if request.method == "POST":
-        temp = db.houseboard.find_one({"_id": "index"})
-        print temp
-        index = int(temp[unicode("val")])
-        return str(index)
+        #temp = db.houseboard.find_one({"_id": "index"})
+        #index = int(temp["val"])
+        #if temp is not None:
+        db.houseboard.insert({"person_option" : request.form["person_option"],"contentTitle" : request.form["contentTitle"],"story": request.form["story"],"area_option1" : request.form["area_option1"],"gender": request.form["gender"],"age_option" : request.form["age_option"],"story" : request.form["story"],"match_info" : request.form["match_info"]})
+        o = MongoGridFS()
+        data = request.files['image']
+        filename = data.filename
+        o.connect('localhost', 27017)
+        o.setDB('sharehouse')
+        o.setGridFS()
+        o.put(data, filename=filename)
+        o.get(filename)
+        return redirect(url_for('main'))
+    else:
+		return "worng access"
+
+        #ret = o.get(image)
+    #else:
+     #   return "worng access"
+    #return request.form["ID"] + "sign in"
+
+
+        #return str(index)
 
 
 if __name__ == '__main__':
