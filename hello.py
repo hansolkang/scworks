@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, session, redirect, url_for
-from pymongo import Connection
+from pymongo import MongoClient
 from gridfs import GridFS
 from werkzeug import secure_filename
 from gridfs.errors import NoFile
@@ -19,9 +19,9 @@ class MongoGridFS:
   def connect(self, host, port):
     if isinstance(port, types.StringType) == True:
       port = int(port)
-    self.instanceConnection = Connection(host, port)
+    self.instanceMongoClient = MongoClient(host, port)
   def setDB(self, dbname):
-    self.db = self.instanceConnection[dbname]
+    self.db = self.instanceMongoClient[dbname]
   def setGridFS(self, prefix = 'fs'):
     self.fs = GridFS(self.db, prefix)
   def put(self, data, **kwargs):
